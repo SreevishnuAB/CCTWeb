@@ -8,9 +8,10 @@ $(document).ready(function(){
       success: function(data){
         if(data)
           window.location = "admin.html";
-        else
+        else{
           alert(data);
           window.location = "index.html";
+        }
       },
       error: function(){
         alert("error");
