@@ -8,10 +8,10 @@ $(document).ready(function(){
       cache: "false",
       data: {username:$("#username").val(),password:$("#password").val()},
       success: function(data){
-        if(data)
+        if(data == 'true')
           window.location = "php/admin.php";
         else
-          alert(data);
+          alert("Incorrect Username or Password");
       },
       error: function(){
         alert("error");
