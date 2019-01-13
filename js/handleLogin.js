@@ -9,7 +9,7 @@ $(document).ready(function(){
       data: {username:$("#username").val(),password:$("#password").val()},
       success: function(data){
         if(data)
-          window.location = "admin.html";
+          window.location = "php/admin.php";
         else
           alert(data);
       },
