@@ -1,5 +1,7 @@
 $(document).ready(function(){
+
   $("#submit").click(function(){
+
     $.ajax({
       type: "POST",
       url: "php/login.php",
@@ -8,14 +10,16 @@ $(document).ready(function(){
       success: function(data){
         if(data)
           window.location = "admin.html";
-        else{
+        else
           alert(data);
-          window.location = "index.html";
-        }
       },
       error: function(){
         alert("error");
       }
     });
+  });
+  
+  $("#form1").submit(function(){
+    event.preventDefault();
   });
 });
