@@ -22,7 +22,8 @@
     $_SESSION["admin"] = 'true';
   else if($resp == 'true')
     $_SESSION["verified"] = $resp;
+    $auth->status = $resp;
   ob_end_clean();
-  echo $resp;
+  echo json_encode($auth);
   $conn->close();
 ?>
