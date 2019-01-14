@@ -5,7 +5,7 @@
   $pwd = $_POST['password'];
   //$user='admin';
   //$pwd='admin';
-  $resp = 'false';
+  $auth->status = 'false';
   $dbserver="eu-cdbr-west-02.cleardb.net";
   $dbuser="b7c754d2844753";
   $dbpwd="0d754f7c";
@@ -16,13 +16,12 @@
   $sql = "select * from users";
   $result = $conn->query($sql);
   if(password_verify($pwd,$result->fetch_assoc()["password"])){
-    $resp='true';
+    $auth->status = 'true';
   }
-  if($resp == 'true' && $user == 'admin')
+  if($auth->status == 'true' && $user == 'admin')
     $_SESSION["admin"] = 'true';
   else if($resp == 'true')
-    $_SESSION["verified"] = $resp;
-  $auth->status = $resp;
+    $_SESSION["verified"] = $auth->status;
   ob_end_clean();
   echo json_encode($auth);
   $conn->close();
