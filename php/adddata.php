@@ -1,6 +1,4 @@
 <?php
-  session_start();
-  if(isset($_SESSION["verified"]) == 'true'){
   $req_body = file_get_contents("php://input");
   $req_data = json_decode($req_body);
   $user = $req_body["user"];
@@ -23,8 +21,5 @@
     $query->status =  "Error";
   }
   $conn->close();
-}
-else
-  $query->status = "Unauthorized";
-echo json_encode($query);
+  echo json_encode($query);
 ?>
