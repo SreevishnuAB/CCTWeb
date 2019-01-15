@@ -1,9 +1,12 @@
 <?php
   session_start();
-  $user = $_POST["user"];
-  $event = $_POST["event"];
-  $id = $_POST["id"];
-  $credits = $_POST["credits"];
+  if(isset($_SESSION["verified"]) == 'true'){
+  $req_body = file_get_contents("php://input");
+  $req_data = json_decode($req_body);
+  $user = $req_body["user"];
+  $event = $req_body["event"];
+  $id = $req_body["id"];
+  $credits = $req_body["credits"];
   $dbserver="eu-cdbr-west-02.cleardb.net";
   $dbuser="b7c754d2844753";
   $dbpwd="0d754f7c";
@@ -12,13 +15,16 @@
   if($conn->connect_error)
     die("Connection failed: ".$conn->connect_error);
   $sql = "insert into studdata(id,event,credits,user) values('$id','$event','$credits','$user')";
+  $query->status="";
   if ($conn->query($sql) === TRUE) {
-    echo "Entry added";
+    $query->status = "Entry added";
   }
   else {
-    echo "Error";
+    $query->status =  "Error";
   }
   $conn->close();
-  session_unset();
-  session_destroy();
+}
+else
+  $query->status = "Unauthorized";
+echo json_encode($query);
 ?>
