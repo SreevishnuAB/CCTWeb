@@ -15,7 +15,7 @@
   if($auth->status == 'true' && $user == 'admin')
     $_SESSION["admin"] = 'true';
   else if($auth->status == 'true')
-    $_SESSION["verified"] = $auth->status;
+    $_SESSION["verified"] = 'true';
   else{
     session_unset();
     session_destroy();
