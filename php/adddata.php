@@ -14,7 +14,7 @@
   if($conn->connect_error)
     die("Connection failed: ".$conn->connect_error);
   $sql = "insert into studdata(id,event,credits,user) values('$id','$event','$credits','$user')";
-  $query->status=$user;
+  //$query->status=$user;
   if ($conn->query($sql) === TRUE) {
     $query->status = "Entry added";
   }
