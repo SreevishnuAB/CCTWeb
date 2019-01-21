@@ -1,5 +1,5 @@
 body{
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     background-color: #001215;
     display: flex;
@@ -11,7 +11,7 @@ body{
     width: 100vw;
 }
 h1{
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 5vh;
     color: #ffffff;
 }
@@ -37,7 +37,7 @@ h1{
     color:#000000;
 }
 #submit{
-    font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     border-width: 0px;
     border-radius: 0.5vw;
     background-color: #009931;
@@ -45,7 +45,7 @@ h1{
 }
 .error{
     color: #ff0000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 table, tr, th, td{
     text-align: left;
@@ -55,6 +55,8 @@ table, tr, th, td{
     padding:5px;
 }
 table{
+    margin-top:2vh;
+    margin-bottom: 2vh;
     background-color: #ffffff;
     color: #001215;
     width:100%;
@@ -64,7 +66,10 @@ th{
     color: #ffffff;
 }
 #admin-header{
-    background-color: #007c30;
+    height: 100%;
+    width:100%;
+    display: inline-block;
+    background-color: #009931;
     text-align: left;
     padding: 2vh;
 }
@@ -80,4 +85,23 @@ th{
 }
 .modal-header, .modal-body, .modal-footer{
     background-color: #001215;
+}
+.logout{
+    width:10%;
+    transition: 0.5s;
+    float:right;
+    background-color: #005e8a;
+    border-width: 0px;
+}
+.logout:hover{
+    border-radius: 50%;
+    transition:0.5s;
+    background-color: #ac0000;
+}
+.header-container{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display:flex;
+    justify-content: space-between;
+    background-color:#009931;
 }
