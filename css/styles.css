@@ -94,7 +94,6 @@ th{
     border-width: 0px;
 }
 .logout:hover{
-    border-radius: 50%;
     transition:0.5s;
     background-color: #ac0000;
 }
