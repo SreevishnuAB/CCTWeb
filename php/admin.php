@@ -27,9 +27,10 @@ if(!isset($_SESSION["verified"])){
         <?php
           if(isset($_SESSION["admin"]) == 'true' && $_SESSION["admin"] == 'true')
             include("tabs.php");
-          else
+          else{
             include("displaytable.php");
             include("displayevents.php");
+          }
           ?>
     </div>
   </body>
