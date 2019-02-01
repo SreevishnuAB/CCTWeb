@@ -19,11 +19,11 @@ if(!isset($_SESSION["verified"])){
     <script src="../js/addUser.js"></script>
     <script src="../js/addEvent.js"></script>
     <script src="../js/logout.js"></script>
-    <title>CCT - User: <?php echo $_SESSION['user']?></title>
+    <title>CCT - User: <?php echo strtoupper($_SESSION['user'])?></title>
   </head>
   <body>
     <div class="container">
-      <div class="header-container"><h1 id="admin-header"> CCT - User: <?php echo $_SESSION["user"]?></h1><button id="lo-button" class="logout">Logout</button></div>
+      <div class="header-container"><h1 id="admin-header"> CCT - User: <?php echo strtoupper($_SESSION["user"])?></h1><button id="lo-button" class="logout">Logout</button></div>
         <?php
           if(isset($_SESSION["admin"]) == 'true' && $_SESSION["admin"] == 'true')
             include("tabs.php");
