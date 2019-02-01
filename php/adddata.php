@@ -2,7 +2,7 @@
   error_reporting(E_ALL);
   $req_body = file_get_contents("php://input");
   $req_data = json_decode($req_body);
-  $user = strtoupper($req_data->user);
+  $user = strtolower($req_data->user);
   $event = $req_data->event;
   $id = strtoupper($req_data->id);
   $credits = $req_data->credits;
