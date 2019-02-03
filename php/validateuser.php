@@ -1,4 +1,6 @@
 <?php
+  $auth = new stdClass();
+  $auth->status = 'false';  
   include("dbconnect.php");
   $sql = "select * from users where username='$user'";
   $result = $conn->query($sql);

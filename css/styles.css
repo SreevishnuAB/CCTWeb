@@ -107,3 +107,24 @@ th{
 .btn{
     margin-top:2vh;
 }
+.btn-container{
+    display: inline-block;
+}
+.dl{
+    background-color: #900C3F ;
+}
+.btn-lg, .btn-lg:hover, .btn-info, .btn-info:hover{
+    transition-duration: 0.5s;
+}
+.btn-lg:hover{
+    color:#ffffff;
+}
+.dl:hover{
+    background-color: #4B021E;
+}
+.btn-info:hover{
+    background-color: #016B78
+}
+a, a:link, a:visited, a:hover,a:active{
+    color: #ffffff;
+}

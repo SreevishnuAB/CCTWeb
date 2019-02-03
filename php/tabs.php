@@ -1,16 +1,19 @@
 <ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#home">Credit Details</a></li>
-  <li><a data-toggle="tab" href="#menu1">Add User</a></li>
-  <li><a data-toggle="tab" href="#menu2">Add Event</a></li>
+  <li class="active"><a data-toggle="tab" href="#home">Details</a></li>
+  <li><a data-toggle="tab" href="#menu1">Users</a></li>
+  <li><a data-toggle="tab" href="#menu2">Events</a></li>
 </ul>
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
-    <h3>Details</h3>
+    <a href='../php/downloadcsv.php?table=studdata' class="dl btn btn-lg" id="dl-details">Download Details</a>
     <?php include("displaytable.php");?>
   </div>
   <div id="menu1" class="tab-pane fade">
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#add-user-modal">Add User</button>
+    <div class="btn-container">
+      <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#add-user-modal">Add User</button>
+      <a class="dl btn btn-lg" id="dl-users" href='../php/downloadcsv.php?table=users'>Download Users</a>
+    </div>
     <?php include("displayusers.php")?>
     <!-- Modal -->
     <div id="add-user-modal" class="modal fade" role="dialog">
@@ -37,7 +40,10 @@
   </div>
   <div id="menu2" class="tab-pane fade">
     <!-- Trigger the modal with a button -->
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#add-event-modal">Add Event</button>
+    <div class="btn-container">
+      <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#add-event-modal">Add Event</button>
+      <a href='../php/downloadcsv.php?table=events' class="dl btn btn-lg" id="dl-events">Download Events</a>
+    </div>
     <?php include("displayevents.php")?>
     <!-- Modal -->
     <div id="add-event-modal" class="modal fade" role="dialog">
